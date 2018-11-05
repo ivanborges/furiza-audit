@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furiza.Audit", "Furiza.Audi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furiza.Audit.SqlServer.Dapper", "Furiza.Audit.SqlServer.Dapper\Furiza.Audit.SqlServer.Dapper.csproj", "{D7166979-DAA6-4A93-955F-1D0B3CF820CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furiza.Audit.Abstractions", "Furiza.Audit.Abstractions\Furiza.Audit.Abstractions.csproj", "{F3CFB8DA-B1DF-4611-93ED-5034A85C2926}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D7166979-DAA6-4A93-955F-1D0B3CF820CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7166979-DAA6-4A93-955F-1D0B3CF820CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7166979-DAA6-4A93-955F-1D0B3CF820CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3CFB8DA-B1DF-4611-93ED-5034A85C2926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3CFB8DA-B1DF-4611-93ED-5034A85C2926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3CFB8DA-B1DF-4611-93ED-5034A85C2926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3CFB8DA-B1DF-4611-93ED-5034A85C2926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

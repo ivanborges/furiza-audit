@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Furiza.Audit
+namespace Furiza.Audit.Abstractions
 {
     public class AuditableObjects<T> : Dictionary<string, T>
         where T : class

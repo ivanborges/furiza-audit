@@ -6,6 +6,9 @@ namespace Furiza.Audit
     public abstract class AuditConfiguration
     {
         [Required]
+        public AuditTool? Tool { get; set; }
+
+        [Required]
         public bool? Enable { get; set; }
 
         public string ApplicationId { get; set; } = Assembly.GetExecutingAssembly().GetName().Name;

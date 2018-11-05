@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Furiza.Audit
+namespace Furiza.Audit.Abstractions
 {
     public interface IAuditTrailProvider
     {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Furiza.Audit
+namespace Furiza.Audit.Abstractions
 {
     public class AuditTrail
     {

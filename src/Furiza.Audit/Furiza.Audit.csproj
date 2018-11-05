@@ -5,8 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Furiza.Newtonsoft.Json" Version="1.0.7" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Microsoft.Extensions.DependencyInjection\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Furiza.Audit.Abstractions\Furiza.Audit.Abstractions.csproj" />
+    <ProjectReference Include="..\Furiza.Audit.SqlServer.Dapper\Furiza.Audit.SqlServer.Dapper.csproj" />
   </ItemGroup>
 
 </Project>

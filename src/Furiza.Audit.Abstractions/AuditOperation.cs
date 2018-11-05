@@ -1,4 +1,4 @@
-﻿namespace Furiza.Audit
+﻿namespace Furiza.Audit.Abstractions
 {
     public enum AuditOperation
     {
