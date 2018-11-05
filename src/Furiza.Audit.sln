@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furiza.Audit", "Furiza.Audit\Furiza.Audit.csproj", "{093D4DC8-857F-4784-978C-65144CA059BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furiza.Audit.SqlServer.Dapper", "Furiza.Audit.SqlServer.Dapper\Furiza.Audit.SqlServer.Dapper.csproj", "{D7166979-DAA6-4A93-955F-1D0B3CF820CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{093D4DC8-857F-4784-978C-65144CA059BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093D4DC8-857F-4784-978C-65144CA059BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093D4DC8-857F-4784-978C-65144CA059BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093D4DC8-857F-4784-978C-65144CA059BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7166979-DAA6-4A93-955F-1D0B3CF820CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7166979-DAA6-4A93-955F-1D0B3CF820CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7166979-DAA6-4A93-955F-1D0B3CF820CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7166979-DAA6-4A93-955F-1D0B3CF820CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F24101F0-FA5F-46DD-B77A-ECCD61FC544A}
+	EndGlobalSection
+EndGlobal
