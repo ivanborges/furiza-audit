@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace Furiza.Audit
+namespace Furiza.Audit.Abstractions
 {
     public abstract class AuditConfiguration
     {

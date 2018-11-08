@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Furiza.Audit.Abstractions;
+using System.ComponentModel.DataAnnotations;
 
 namespace Furiza.Audit.SqlServer.Dapper
 {

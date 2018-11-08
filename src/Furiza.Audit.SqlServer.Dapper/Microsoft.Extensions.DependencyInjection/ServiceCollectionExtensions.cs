@@ -1,7 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Furiza.Audit.Abstractions;
+using Furiza.Audit.SqlServer.Dapper;
 using System;
 
-namespace Furiza.Audit.SqlServer.Dapper.Microsoft.Extensions.DependencyInjection
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {
