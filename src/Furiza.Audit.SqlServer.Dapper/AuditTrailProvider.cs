@@ -75,7 +75,6 @@ namespace Furiza.Audit.SqlServer.Dapper
                             {(!string.IsNullOrWhiteSpace(trail.ObjectSerial) ? $"'{trail.ObjectSerial}'" : "NULL")}
                         );");
 
-
             await auditContext.ExecuteWithTransactionAsync(transactionBuilder.ToString());
         }
 
