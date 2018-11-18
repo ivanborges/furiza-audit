@@ -11,7 +11,7 @@ namespace Furiza.Audit.Abstractions
         public Guid TransactionId { get; }
         public DateTime Timestamp { get; }
 
-        public AuditableObjects()
+        public AuditableObjects() : base()
         {
             TransactionId = Guid.NewGuid();
             Timestamp = DateTime.UtcNow;
@@ -22,7 +22,7 @@ namespace Furiza.Audit.Abstractions
             Add(objectId, @object);
         }
 
-        private AuditableObjects(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected AuditableObjects(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
 
@@ -31,7 +31,5 @@ namespace Furiza.Audit.Abstractions
             Add(objectId, @object);
             return this;
         }
-
-        public override void GetObjectData(SerializationInfo info, StreamingContext context) => base.GetObjectData(info, context);
     }
 }
