@@ -1,0 +1,136 @@
+pool:
+  vmImage: 'VS2017-Win2016'
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+  #Pack1 -------------------
+  ##Audit
+  ##Audit.Abstractions
+  ##Audit.SqlServer.Dapper  
+  Pack1Version: '1.0.0'
+  Pack1PushToNuget: False
+
+steps:
+# Install NuGet Tool
+- task: NuGetToolInstaller@0
+  displayName: Install NuGet Tool
+
+# Restore NuGet packages
+- task: NuGetCommand@2
+  displayName: Restore NuGet Packages
+  inputs:
+    restoreSolution: '$(solution)'
+
+# Prepare analysis on SonarCloud
+- task: SonarSource.sonarcloud.14d9cde6-c1da-4d55-aa01-2965cd301255.SonarCloudPrepare@1
+  displayName: Prepare analysis on SonarCloud
+  inputs:
+    SonarCloud: 'apikey-sonar-audit'
+    organization: 'ivanborges-github'
+    projectKey: 'ivanborges_furiza-audit'
+    projectName: 'furiza-audit'
+
+# Build solution
+- task: VSBuild@1
+  displayName: Build Solution
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+# Run unit tests
+- task: VSTest@2
+  displayName: Run Unit Tests
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+# Run Code Analysis
+- task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
+  displayName: Run Code Analysis
+
+# Publish Quality Gate Result
+- task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
+  displayName: Publish Quality Gate Result
+
+# Prepare publish files
+- task: DotNetCoreCLI@2
+  displayName: Prepare Publish Files
+  inputs:
+    command: publish
+    publishWebProjects: False
+    projects: '**/**/Furiza.Audit*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: False
+
+# Publish the artifacts
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifacts
+
+# Publish Furiza.Audit to NuGet.org
+- task: DotNetCoreCLI@2
+  displayName: Pack Furiza.Audit
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  inputs:
+    command: pack
+    packagesToPack: '**/**/Furiza.Audit.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: Pack1Version
+- task: NuGetCommand@2
+  displayName: Push Furiza.Audit to NuGet.org
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Audit.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-audit'
+
+# Publish Furiza.Audit.Abstractions to NuGet.org
+- task: DotNetCoreCLI@2
+  displayName: Pack Furiza.Audit.Abstractions
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  inputs:
+    command: pack
+    packagesToPack: '**/**/Furiza.Audit.Abstractions.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: Pack1Version
+- task: NuGetCommand@2
+  displayName: Push Furiza.Audit.Abstractions to NuGet.org
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Audit.Abstractions.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-audit-abstractions'
+
+# Publish Furiza.Audit.SqlServer.Dapper to NuGet.org
+- task: DotNetCoreCLI@2
+  displayName: Pack Furiza.Audit.SqlServer.Dapper
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  inputs:
+    command: pack
+    packagesToPack: '**/**/Furiza.Audit.SqlServer.Dapper.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: Pack1Version
+- task: NuGetCommand@2
+  displayName: Push Furiza.Audit.SqlServer.Dapper to NuGet.org
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/Furiza.Audit.SqlServer.Dapper.*.nupkg'
+    publishFeedCredentials: 'apikey-nuget-audit-sqlserver.dapper'
