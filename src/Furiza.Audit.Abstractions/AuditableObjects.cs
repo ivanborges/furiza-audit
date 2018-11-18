@@ -31,5 +31,16 @@ namespace Furiza.Audit.Abstractions
             Add(objectId, @object);
             return this;
         }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            if (info == null)
+                throw new ArgumentNullException(nameof(info));
+
+            info.AddValue("TransactionId", TransactionId);
+            info.AddValue("Timestamp", Timestamp);
+
+            base.GetObjectData(info, context);
+        }
     }
 }
