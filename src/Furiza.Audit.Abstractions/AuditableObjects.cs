@@ -22,7 +22,7 @@ namespace Furiza.Audit.Abstractions
             Add(objectId, @object);
         }
 
-        protected AuditableObjects(SerializationInfo info, StreamingContext context) : base(info, context)
+        private AuditableObjects(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
 
@@ -31,5 +31,7 @@ namespace Furiza.Audit.Abstractions
             Add(objectId, @object);
             return this;
         }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context) => base.GetObjectData(info, context);
     }
 }
