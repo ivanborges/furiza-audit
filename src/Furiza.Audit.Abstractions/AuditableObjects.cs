@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 namespace Furiza.Audit.Abstractions
 {
+    [Serializable]
     public class AuditableObjects<T> : Dictionary<string, T>
         where T : class
     {
