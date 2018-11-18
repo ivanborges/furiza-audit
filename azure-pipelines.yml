@@ -17,7 +17,7 @@ variables:
   #Pack1 -------------------
   ##Audit
   ##Audit.Abstractions
-  ##Audit.SqlServer.Dapper  
+  ##Audit.SqlServer.Dapper
   Pack1Version: '1.0.0'
   Pack1PushToNuget: False
 
