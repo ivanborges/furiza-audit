@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Furīza</Authors>
+    <Copyright>Furīza (C) 2018</Copyright>
+    <PackageProjectUrl>https://github.com/ivanborges/furiza-audit</PackageProjectUrl>
+    <PackageTags>furiza;audit</PackageTags>
+    <PackageIconUrl>https://www.imagemhost.com.br/images/2018/10/17/furiza_logo_transp_6.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/ivanborges/furiza-audit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>This package configures audit for applications, abstracting the mechanism used (SqlServer with Dapper, etc.).</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Furiza.Audit.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Furiza.Audit.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Microsoft.Extensions.DependencyInjection\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="furiza.extensions.configuration" Version="1.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Furiza.Audit.Abstractions\Furiza.Audit.Abstractions.csproj" />
+    <ProjectReference Include="..\Furiza.Audit.SqlServer.Dapper\Furiza.Audit.SqlServer.Dapper.csproj" />
+  </ItemGroup>
+
+</Project>
