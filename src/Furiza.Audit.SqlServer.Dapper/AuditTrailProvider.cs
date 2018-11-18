@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Furiza.Audit.SqlServer.Dapper
@@ -41,9 +42,9 @@ namespace Furiza.Audit.SqlServer.Dapper
                 o.Value,
                 namesOfPropertiesToIgnore));
 
-            var transaction = string.Empty;
+            var transactionBuilder = new StringBuilder();
             foreach (var trail in trails)
-                transaction += $@"
+                transactionBuilder.Append($@"
                     insert into
                         [{auditConfigurationSqlServer.SqlServer.DatabaseName}].
                         [{auditConfigurationSqlServer.SqlServer.SchemaName}].
@@ -72,9 +73,10 @@ namespace Furiza.Audit.SqlServer.Dapper
                             '{trail.ObjectAssembly}',
                             '{trail.ObjectId}',
                             {(!string.IsNullOrWhiteSpace(trail.ObjectSerial) ? $"'{trail.ObjectSerial}'" : "NULL")}
-                        );";
+                        );");
 
-            await auditContext.ExecuteWithTransactionAsync(transaction);
+
+            await auditContext.ExecuteWithTransactionAsync(transactionBuilder.ToString());
         }
 
         public async Task<IEnumerable<AuditTrail>> ViewHistoryAsync<T>(string objectId) where T : class
