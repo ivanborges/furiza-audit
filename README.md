@@ -1,4 +1,4 @@
-[![furiza_logo_transp_6.png](https://www.imagemhost.com.br/images/2018/10/17/furiza_logo_transp_6.png)](https://www.imagemhost.com.br/image/rhCra)
+[![furiza_escrita_logo_v2.png](https://www.imagemhost.com.br/images/2019/03/22/furiza_escrita_logo_v2.png)](https://www.imagemhost.com.br/image/Ybsqy)
 
 [![Build Status](https://dev.azure.com/ivanborges/Furiza/_apis/build/status/furiza-audit)](https://dev.azure.com/ivanborges/Furiza/_build/latest?definitionId=7)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-audit&metric=alert_status)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-audit)
