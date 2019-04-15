@@ -19,7 +19,7 @@ variables:
   ##Audit.Abstractions
   ##Audit.SqlServer.Dapper
   Pack1Version: '1.0.1'
-  Pack1PushToNuget: True
+  Pack1PushToNuget: False
 
 steps:
 # Install NuGet Tool
