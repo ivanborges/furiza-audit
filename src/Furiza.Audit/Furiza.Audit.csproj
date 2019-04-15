@@ -2,11 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Furīza</Authors>
-    <Copyright>Furīza (C) 2018</Copyright>
-    <PackageProjectUrl>https://github.com/ivanborges/furiza-audit</PackageProjectUrl>
+    <Authors>Furiza</Authors>
+    <Copyright>Furiza (C) 2019</Copyright>
     <PackageTags>furiza;audit</PackageTags>
-    <PackageIconUrl>https://www.imagemhost.com.br/images/2018/10/17/furiza_logo_transp_6.png</PackageIconUrl>
+    <PackageIconUrl>https://www.imagemhost.com.br/images/2019/03/22/furiza_escrita_logo_v2.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/ivanborges/furiza-audit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Description>This package configures audit for applications, abstracting the mechanism used (SqlServer with Dapper, etc.).</Description>
@@ -27,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="furiza.extensions.configuration" Version="1.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.1.1" />
+    <PackageReference Include="furiza.extensions.configuration" Version="1.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>

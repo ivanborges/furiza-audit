@@ -2,11 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Furīza</Authors>
-    <Copyright>Furīza (C) 2018</Copyright>
-    <PackageProjectUrl>https://github.com/ivanborges/furiza-audit</PackageProjectUrl>
+    <Authors>Furiza</Authors>
+    <Copyright>Furiza (C) 2019</Copyright>
     <PackageTags>furiza;audit;sqlserver;dapper</PackageTags>
-    <PackageIconUrl>https://www.imagemhost.com.br/images/2018/10/17/furiza_logo_transp_6.png</PackageIconUrl>
+    <PackageIconUrl>https://www.imagemhost.com.br/images/2019/03/22/furiza_escrita_logo_v2.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/ivanborges/furiza-audit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Description>This package implements an audit trail provider making use of SqlServer with Dapper.</Description>
@@ -23,10 +22,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dapper" Version="1.50.5" />
-    <PackageReference Include="microsoft.aspnetcore.http.abstractions" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
-    <PackageReference Include="microsoft.extensions.logging.abstractions" Version="2.1.1" />
+    <PackageReference Include="dapper" Version="1.60.6" />
+    <PackageReference Include="microsoft.aspnetcore.http.abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+    <PackageReference Include="microsoft.extensions.logging.abstractions" Version="2.2.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
 
