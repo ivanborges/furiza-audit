@@ -1,6 +1,6 @@
 [![furiza_escrita_logo_v2.png](https://www.imagemhost.com.br/images/2019/03/22/furiza_escrita_logo_v2.png)](https://www.imagemhost.com.br/image/Ybsqy)
 
-[![Build Status](https://dev.azure.com/ivanborges/Furiza/_apis/build/status/furiza-audit)](https://dev.azure.com/ivanborges/Furiza/_build/latest?definitionId=7)
+[![Build Status](https://dev.azure.com/ivanborges/Furiza/_apis/build/status/furiza-audit?branchName=master)](https://dev.azure.com/ivanborges/Furiza/_build/latest?definitionId=7&branchName=master)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-audit&metric=alert_status)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-audit)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-audit&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-audit)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ivanborges_furiza-audit&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=ivanborges_furiza-audit)
